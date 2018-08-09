@@ -18,12 +18,15 @@ Mike Burr <mburr@unintuitive.org>
   <head>
     <meta charset="utf-8"/>
 <title>Mike Burr</title>
-    <link rel="shortcut icon" href="{% static 'oleo/bin/favicon.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'oleo/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'main/bin/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
   </head>
-
   
-<ul>
+  <body>
+    <div id="body">
+<div id="header">
+  
+<ul id="top-menu">
   {% for page in pages %}
   {% if page == current_page %}
   <li><a class="active" href="{% url 'page' page.name %}">{{ page.label }}</a></li>
@@ -33,12 +36,22 @@ Mike Burr <mburr@unintuitive.org>
   {% endfor %}
 </ul>
 
-<div class="content">
-<h2>{{ current_page.headline }}</h2>
-{{ content }}
 </div>
 
+<div id="main">
+foo
+<h2>{{ current_page.headline }}</h2>
+{{ content }}
+bar
+</div> <!-- main -->
+
 <div id="footer">
-Built with <a href="">Django</a> by <a href="mailto:mburr@unintuitive.org">Mike Burr</a>
-</div>
+Built with <a href="https://www.djangoproject.com/">Django</a> by <a href="mailto:mburr@unintuitive.org">Mike Burr</a>
+</div> <!-- footer -->
+
+
+</div> <!-- body div -->
+
+  <body>
+  
 </html>
