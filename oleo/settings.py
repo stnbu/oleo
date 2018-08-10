@@ -25,8 +25,7 @@ SECRET_KEY = open(os.path.join(BASE_DIR, 'SECRET_KEY')).read()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['127.0.0.1', '50.116.38.133', '.unintuitive.org', 'unintuitive.org']
 
 # Application definition
 
