@@ -12,6 +12,7 @@ class Page(models.Model):
 class Content(models.Model):
     page = models.ForeignKey(Page, on_delete=models.CASCADE)
     main = models.TextField(blank=True)
+    rhs = models.TextField(blank=True)
 
     def __str__(self):
         return self.page.name
