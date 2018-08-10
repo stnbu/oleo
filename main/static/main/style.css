@@ -1,53 +1,33 @@
-
 :root {
     --main-bg-color: #F6EBD5;
     --main-text-color: black;
+
     --header-bg-color: #E9A41C;
-    /* --header-text-color: #60435F; */
     --header-text-color: #0B330B;
+    --header-hight: 200px;
+
     --footer-bg-color: var(--header-text-color);
     --footer-text-color: var(--header-bg-color);
-    --something: #619060;
-    --something3: #619000;
-    --something2: #614F60;
-    --header-hight: 200px;
+
+    --top-menu-bg: #619060;
+    --top-menu-active: #619000;
+    --top-menu-inactive: #614F60;
+    --top-menu-text: black;
 }
 
+/* ------------- */
 
-
-/* -----------[fixme]------------- */
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    /* background-color: #333; */
-}
-li {
-    float: left;
-}
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover:not(.active) {
-    background-color: var(--something2);
-}
-.active {
-    background-color: var(--something3);;
-}
-/* ------------------------------- */
-
-
-
-/* we wrap the <body> in a <div> */
 #body a:link { color: inherit; }
 #body a:visited { color: inherit; }
 #body a:hover { color: inherit; }
 #body a:active { color: inherit; }
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: sans-serif;
+}
+
+/* ------------- */
 
 #header {
     display: block;
@@ -62,23 +42,53 @@ li a:hover:not(.active) {
     right: 0;
 }
 
+img {
+    float: right;
+    max-width:100%;
+    max-height:100%;
+}
+
+/* ------------- */
+
 #top-menu {
-    background-color: var(--something);
-    color: black;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--top-menu-bg);
+    color: var(--top-menu-text);
     position: absolute;
     bottom: 2px;
     width: 100%
 }
 
-body {
-    background-color: var(--main-bg-color);
-    color: var(--main-text-color);
-    font-family: sans-serif;
+#top-menu a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
+
+#top-menu li {
+    float: left;
+}
+
+#top-menu li a:hover:not(.active) {
+    background-color: var(--top-menu-inactive);
+}
+
+#top-menu .active {
+    background-color: var(--top-menu-active);;
+}
+
+/* ------------- */
 
 #main {
     padding-top: var(--header-hight); /* HACK!!! */
 }
+
+/* ------------- */
 
 #footer {
     background-color: var(--footer-bg-color);
