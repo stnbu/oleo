@@ -1,4 +1,4 @@
 SECRET_KEY
 db.sqlite3*
 **/migrations
-tabs/static/tabs/bin
+main/static/main/bin
