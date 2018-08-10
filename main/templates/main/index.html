@@ -18,8 +18,11 @@ Mike Burr <mburr@unintuitive.org>
   <head>
     <meta charset="utf-8"/>
 <title>Mike Burr</title>
-    <link rel="shortcut icon" href="{% static 'main/favicon.svg' %}">
+<link rel="shortcut icon" href="{% static 'main/favicon.svg' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+{% if current_page.name == "resume" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/resume.css' %}">
+{% endif %}
   </head>
 
   <body>
@@ -44,20 +47,26 @@ Mike Burr <mburr@unintuitive.org>
 <img src="/static/main/bin/potatoe.png" />
 
 </div> <!-- header -->
-
 <div id="main">
+  {% if current_page.name == "resume" %}
+
+  <div id="resume-div">
+    <p>Download: <a href="/static/resume-mike-burr.docx">docx</a></p>
+    {% include "main/resume.html" %}
+  </div>
+
+
+      {% else %}
   <h2>{{ current_page.headline }}</h2>
-
-
 <table width="100%">
   <col width="80%">
   <col width="20%">
-
   <tr>
     <td>{{ content.main|safe }}</td>
     <td>{{ content.rhs|safe }}</td>
   </tr>
 </table>
+{% endif %}
 
 
 </div> <!-- main -->
