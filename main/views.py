@@ -7,6 +7,8 @@ def page(request, current_page_name):
     current_page = Page.objects.get(name=current_page_name)
     content = get_object_or_404(Content, page=current_page)
     context = {
+        'current_page': current_page,
+        'content': content,
         'pages': pages,
     }
     return render(request, 'main/index.html', context)

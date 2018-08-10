@@ -8,7 +8,9 @@
     --footer-bg-color: var(--header-text-color);
     --footer-text-color: var(--header-bg-color);
     --something: #619060;
-    --something2: #619000;
+    --something3: #619000;
+    --something2: #614F60;
+    --header-hight: 200px;
 }
 
 
@@ -35,7 +37,7 @@ li a:hover:not(.active) {
     background-color: var(--something2);
 }
 .active {
-    background-color: #800080;
+    background-color: var(--something3);;
 }
 /* ------------------------------- */
 
@@ -50,7 +52,7 @@ li a:hover:not(.active) {
 #header {
     display: block;
     width: 100%;
-    height: 200px;
+    height: var(--header-hight);
     overflow: scroll;
     background-color: var(--header-bg-color);
     color: var(--header-text-color);
@@ -72,6 +74,10 @@ body {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
     font-family: sans-serif;
+}
+
+#main {
+    padding-top: var(--header-hight); /* HACK!!! */
 }
 
 #footer {

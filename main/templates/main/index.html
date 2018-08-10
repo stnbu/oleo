@@ -10,7 +10,7 @@ I'm interested in full-time employment as well as opportunities to
 contribute to interesting open source projects. Feel free to contact
 me!
 
-Source: https://github.com/stnbu/sws
+Source: https://github.com/stnbu/oleo
 
 Mike Burr <mburr@unintuitive.org>
 -->
@@ -36,13 +36,10 @@ Mike Burr <mburr@unintuitive.org>
   {% endfor %}
 </ul>
 
-</div>
-
+</div> <!-- header -->
 <div id="main">
-foo
 <h2>{{ current_page.headline }}</h2>
-{{ content }}
-bar
+{{ content.main }}
 </div> <!-- main -->
 
 <div id="footer">
@@ -50,7 +47,6 @@ Built with <a href="https://www.djangoproject.com/">Django</a> by <a href="mailt
 </div> <!-- footer -->
 
 
-</div> <!-- body div -->
 
   <body>
   
