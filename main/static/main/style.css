@@ -87,7 +87,9 @@ img {
 }
 
 #top-menu li a:hover:not(.active) {
-    background-color: var(--top-menu-inactive);
+    color: var(--top-menu-bg);
+    background-color: var(--top-menu-text);
+    /* background-color: var(--top-menu-inactive); */
 }
 
 #top-menu .active {
