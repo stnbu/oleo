@@ -36,10 +36,12 @@ Mike Burr <mburr@unintuitive.org>
 
 <ul id="top-menu">
   {% for page in pages %}
+  {% if page.tab_visible %}
   {% if page == current_page %}
   <li><a class="active" href="{% url 'page' page.name %}">{{ page.label }}</a></li>
   {% else %}
   <li><a href="{% url 'page' page.name %}">{{ page.label }}</a></li>
+  {% endif %}
   {% endif %}
   {% endfor %}
 </ul>
@@ -49,13 +51,15 @@ Mike Burr <mburr@unintuitive.org>
 </div> <!-- header -->
 <div id="main">
   {% if current_page.name == "resume" %}
-
   <div id="resume-div">
     <p>Download: <a href="/static/resume-mike-burr.docx">docx</a></p>
     {% include "main/resume.html" %}
   </div>
-
-
+  {% elif current_page.name == "resume_beta" %}
+  <div id="resume-div">
+    <p>Download: <a href="/static/beta-resume-mike-burr.docx">docx</a></p>
+    {% include "main/beta-resume.html" %}
+  </div>
       {% else %}
   <h2>{{ current_page.headline }}</h2>
 <table width="100%">
