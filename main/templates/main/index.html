@@ -1,86 +1,86 @@
 <!DOCTYPE html>
 {% load static %}
 <!--
-Hello. I'm often looking for new opportunities. This website serves as
-an opportunity for me to resurrect my Django skills. It's nothing
-spectacular, but it represents only a few days' effort. Improvements
-to come...
+     Hello. I'm often looking for new opportunities. This website serves as
+     an opportunity for me to resurrect my Django skills. It's nothing
+     spectacular, but it represents only a few days' effort. Improvements
+     to come...
 
-I'm interested in full-time employment as well as opportunities to
-contribute to interesting open source projects. Feel free to contact
-me!
+     I'm interested in full-time employment as well as opportunities to
+     contribute to interesting open source projects. Feel free to contact
+     me!
 
-Source: https://github.com/stnbu/oleo
+     Source: https://github.com/stnbu/oleo
 
-Mike Burr <mburr@unintuitive.org>
+     Mike Burr <mburr@unintuitive.org>
 -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-<title>Mike Burr</title>
-<link rel="shortcut icon" href="{% static 'main/favicon.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
-{% if current_page.name == "resume" %}
-    <link rel="stylesheet" type="text/css" href="{% static 'main/resume.css' %}">
-{% endif %}
-  </head>
+    <head>
+	<meta charset="utf-8"/>
+	<title>Mike Burr</title>
+	<link rel="shortcut icon" href="{% static 'main/favicon.ico' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+	{% if current_page.name == "resume" %}
+	<link rel="stylesheet" type="text/css" href="{% static 'main/resume.css' %}">
+	{% endif %}
+    </head>
 
-  <body>
-    <div id="body">
-      <div id="header">
+    <body>
+	<div id="body">
+	    <div id="header">
 
-	<div id="top-left-tagline">
-	  <h2>Mike Burr &ndash; Engineer, etc.</h2>
+		<div id="top-left-tagline">
+		    <h2>Mike Burr &ndash; Engineer, etc.</h2>
 
-	  </div> <!-- top-left-tabgline -->
+		</div> <!-- top-left-tabgline -->
 
-<ul id="top-menu">
-  {% for page in pages %}
-  {% if page.tab_visible %}
-  {% if page == current_page %}
-  <li><a class="active" href="{% url 'page' page.name %}">{{ page.label }}</a></li>
-  {% else %}
-  <li><a href="{% url 'page' page.name %}">{{ page.label }}</a></li>
-  {% endif %}
-  {% endif %}
-  {% endfor %}
-</ul>
+		<ul id="top-menu">
+		    {% for page in pages %}
+		    {% if page.tab_visible %}
+		    {% if page == current_page %}
+		    <li><a class="active" href="{% url 'page' page.name %}">{{ page.label }}</a></li>
+		    {% else %}
+		    <li><a href="{% url 'page' page.name %}">{{ page.label }}</a></li>
+		    {% endif %}
+		    {% endif %}
+		    {% endfor %}
+		</ul>
 
-<img src="/static/main/bin/potatoe.png" />
+		<img src="/static/main/bin/potatoe.png" />
 
-</div> <!-- header -->
-<div id="main">
-  {% if current_page.name == "resume" %}
-  <div id="resume-div">
-    <p>Download: <a href="/static/resume-mike-burr.docx">docx</a></p>
-    {% include "main/resume.html" %}
-  </div>
-  {% elif current_page.name == "resume_beta" %}
-  <div id="resume-div">
-    <p>Download: <a href="/static/beta-resume-mike-burr.docx">docx</a></p>
-    {% include "main/beta-resume.html" %}
-  </div>
-      {% else %}
-  <h2>{{ current_page.headline }}</h2>
-<table width="100%">
-  <col width="80%">
-  <col width="20%">
-  <tr>
-    <td>{{ content.main|safe }}</td>
-    <td>{{ content.rhs|safe }}</td>
-  </tr>
-</table>
-{% endif %}
+	    </div> <!-- header -->
+	    <div id="main">
+		{% if current_page.name == "resume" %}
+		<div id="resume-div">
+		    <p>Download: <a href="/static/resume-mike-burr.docx">docx</a></p>
+		    {% include "main/resume.html" %}
+		</div>
+		{% elif current_page.name == "resume_beta" %}
+		<div id="resume-div">
+		    <p>Download: <a href="/static/beta-resume-mike-burr.docx">docx</a></p>
+		    {% include "main/beta-resume.html" %}
+		</div>
+		{% else %}
+		<h2>{{ current_page.headline }}</h2>
+		<table width="100%">
+		    <col width="80%">
+		    <col width="20%">
+		    <tr>
+			<td>{{ content.main|safe }}</td>
+			<td>{{ content.rhs|safe }}</td>
+		    </tr>
+		</table>
+		{% endif %}
 
 
-</div> <!-- main -->
+	    </div> <!-- main -->
 
-<div id="footer">
-Built with <a href="https://www.djangoproject.com/">Django</a> by <a href="mailto:mburr@unintuitive.org">Mike Burr</a>&nbsp;
-</div> <!-- footer -->
+	    <div id="footer">
+		Built with <a href="https://www.djangoproject.com/">Django</a> by <a href="mailto:mburr@unintuitive.org">Mike Burr</a>&nbsp;
+	    </div> <!-- footer -->
 
-</div> <!-- body -->
+	</div> <!-- body -->
 
-  </body>
+    </body>
 
 </html>
