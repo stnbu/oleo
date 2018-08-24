@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html class="oldie">
 {% load static %}
 <!--
      Hello. I'm often looking for new opportunities. This website serves as
@@ -20,9 +20,6 @@
 	<title>Mike Burr</title>
 	<link rel="shortcut icon" href="{% static 'main/favicon.ico' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
-	{% if current_page.name == "resume" %}
-	<link rel="stylesheet" type="text/css" href="{% static 'main/resume.css' %}">
-	{% endif %}
     </head>
 
     <body>
@@ -50,17 +47,6 @@
 
 	    </div> <!-- header -->
 	    <div id="main">
-		{% if current_page.name == "resume" %}
-		<div id="resume-div">
-		    <p>Download: <a href="/static/resume-mike-burr.docx">docx</a></p>
-		    {% include "main/resume.html" %}
-		</div>
-		{% elif current_page.name == "resume_beta" %}
-		<div id="resume-div">
-		    <p>Download: <a href="/static/beta-resume-mike-burr.docx">docx</a></p>
-		    {% include "main/beta-resume.html" %}
-		</div>
-		{% else %}
 		<h2>{{ current_page.headline }}</h2>
 		<table width="100%">
 		    <col width="80%">
@@ -70,7 +56,6 @@
 			<td>{{ content.rhs|safe }}</td>
 		    </tr>
 		</table>
-		{% endif %}
 
 
 	    </div> <!-- main -->
