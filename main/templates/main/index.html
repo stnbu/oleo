@@ -19,6 +19,10 @@
 	<meta charset="utf-8"/>
 	<title>Mike Burr</title>
 	<link rel="shortcut icon" href="{% static 'main/favicon.ico' %}">
+	{# this coordinated with "main/views.py". needs refactoring #}
+	{% if repos_list %}
+	<link rel="stylesheet" type="text/css" href="{% static 'gitbored/style.css' %}">
+	{% endif %}
 	<link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
     </head>
 
@@ -57,6 +61,11 @@
 		    </tr>
 		</table>
 
+		{# this coordinated with "main/views.py". needs refactoring #}
+		{% if repos_list %}
+		{# requres settings.TEMPLATES['APP_DIRS']==True #}
+		{% include "gitbored/index.html" %}
+		{% endif %}
 
 	    </div> <!-- main -->
 

@@ -7,7 +7,6 @@ urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url='/static/main/favicon.ico')),
     path('resume/', RedirectView.as_view(url='/static/main/bin/resume-mike-burr.html')),
     path('', RedirectView.as_view(url='/pages/home/')),
-    path('gitbored/', include('gitbored.urls')),
     path('pages/', include('main.urls')),
 ]
 
