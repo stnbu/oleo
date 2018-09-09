@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '50.116.38.133', '.unintuitive.org', 'unintuitive.
 
 INSTALLED_APPS = [
     'gitbored',
+    'coincharts',
     'main',
     'django.contrib.admin',
     'django.contrib.auth',

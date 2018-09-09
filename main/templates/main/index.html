@@ -67,6 +67,10 @@
 		{% include "gitbored/index.html" %}
 		{% endif %}
 
+		{% if coin_chart %}
+		{{ coin_chart|safe }}
+		{% endif %}
+
 	    </div> <!-- main -->
 
 	    <div id="footer">
